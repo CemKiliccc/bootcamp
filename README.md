@@ -22,13 +22,4 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 - **Mantık**: Öncelikli kuyruk (heapq) ile en düşük sürede ulaşılan istasyonlar önceliklendirerek en hızlı rota bulunur.
 - **Kullanım Amacı**: Kullanıcının toplam süre açısından en verimli yolculuk güzergahını belirlemek.
 
-## Örnek Kullanım ve Test Sonuçları
-
-### Örnek Metro Ağı
-
-- **Kırmızı Hat**: Kızılay, Ulus, Demetevler, OSB
-- **Mavi Hat**: AŞTİ, Kızılay, Sıhhiye, Gar
-- **Turuncu Hat**: Batıkent, Demetevler, Gar, Keçiören
-
-
 
