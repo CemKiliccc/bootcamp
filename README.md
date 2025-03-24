@@ -30,26 +30,5 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 - **Mavi Hat**: AŞTİ, Kızılay, Sıhhiye, Gar
 - **Turuncu Hat**: Batıkent, Demetevler, Gar, Keçiören
 
-Bağlantılar ve aktarma istasyonları oluşturularak aşağıdaki testler gerçekleştirilmiştir:
 
-#### Örnek Senaryolar
-
-1. **AŞTİ -> OSB**
-   - En az aktarmalı rota: `AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB`
-   - En hızlı rota (toplam 18 dakika): `AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB`
-
-2. **Batıkent -> Keçiören**
-   - En az aktarmalı rota: `Batıkent -> Demetevler -> Gar -> Keçiören`
-   - En hızlı rota (toplam 21 dakika): `Batıkent -> Demetevler -> Gar -> Keçiören`
-
-3. **Keçiören -> AŞTİ**
-   - En az aktarmalı rota: `Keçiören -> Gar -> Sıhhiye -> Kızılay -> AŞTİ`
-   - En hızlı rota (toplam 14 dakika): `Keçiören -> Gar -> Sıhhiye -> Kızılay -> AŞTİ`
-
-## Projeyi Geliştirme Fikirleri
-
-- **Gerçek Zamanlı Trafik ve Gecikme Verisi**: Metro hatlarındaki gecikmeler ve yolcu yoğunluğunu dikkate alan bir sistem geliştirilebilir.
-- **Kullanıcı Arayüzü (GUI)**: Kullanıcıların istasyonları seçerek görsel bir harita üzerinden rota planlaması yapabilmesi sağlanabilir.
-- **Mobil Uygulama Entegrasyonu**: Bu sistem, bir mobil uygulamaya entegre edilerek daha kullanışlı hale getirilebilir.
-- **Yapay Zeka Destekli Öneriler**: Kullanıcının geçmiş verilerini analiz ederek en uygun güzergah önerileri sunan bir sistem eklenebilir.
 
