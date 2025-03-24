@@ -1,43 +1,55 @@
-Metro Ağı Rota Bulucu
+# Metro Ağı Rota Bulucu
 
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulmayı sağlayan bir Python uygulamasıdır. Kullanıcı, iki istasyon arasında en uygun rotayı öğrenebilir.
 
-Kullanılan Teknolojiler ve Kütüphaneler
+## Kullanılan Teknolojiler ve Kütüphaneler
 
-Python 3: Projenin temel programlama dili.
+- **Python 3**: Projenin temel programlama dili.
+- **collections.defaultdict**: Hatları ve istasyonları organize etmek için kullanıldı.
+- **collections.deque**: En az aktarmalı rotayı bulmak için kullanılan BFS algoritması için kuyruk yapısı sağladı.
+- **heapq**: En hızlı rotayı bulmak için kullanılan Dijkstra algoritmasının öncelikli kuyruk yapısını sağladı.
+- **typing**: Veri tiplerini daha net tanımlamak için kullanıldı.
 
-collections.defaultdict: Hatları ve istasyonları organize etmek için kullanıldı.
+## Algoritmaların Çalışma Mantığı
 
-collections.deque: En az aktarmalı rotayı bulmak için kullanılan BFS algoritması için kuyruk yapısı sağladı.
+### BFS (En Az Aktarmalı Rota)
+- Breadth-First Search (BFS) algoritması kullanılarak iki istasyon arasındaki en az aktarmalı rota bulunur.
+- **Mantık**: BFS, en kısa yolu bulmak için katman katman ilerleyen bir algoritmadır. Bu sayede, en az durak değiştirerek hedefe ulaşmanın yolu belirlenebilir.
+- **Kullanım Amacı**: Aktarma sayısını minimize ederek en pratik güzergahı belirlemek.
 
-heapq: En hızlı rotayı bulmak için kullanılan Dijkstra algoritmasının öncelikli kuyruk yapısını sağladı.
+### Dijkstra (En Hızlı Rota)
+- En hızlı rotayı bulmak için **Dijkstra Algoritması** kullanılmıştır.
+- **Mantık**: Öncelikli kuyruk (heapq) ile en düşük sürede ulaşılan istasyonlar önceliklendirerek en hızlı rota bulunur.
+- **Kullanım Amacı**: Kullanıcının toplam süre açısından en verimli yolculuk güzergahını belirlemek.
 
-typing: Veri tiplerini daha net tanımlamak için kullanıldı.
+## Örnek Kullanım ve Test Sonuçları
 
-Algoritmaların Çalışma Mantığı
+### Örnek Metro Ağı
 
-BFS (En Az Aktarmalı Rota)
+- **Kırmızı Hat**: Kızılay, Ulus, Demetevler, OSB
+- **Mavi Hat**: AŞTİ, Kızılay, Sıhhiye, Gar
+- **Turuncu Hat**: Batıkent, Demetevler, Gar, Keçiören
 
-Breadth-First Search (BFS) algoritması kullanılarak iki istasyon arasındaki en az aktarmalı rota bulunur.
+Bağlantılar ve aktarma istasyonları oluşturularak aşağıdaki testler gerçekleştirilmiştir:
 
-Mantık: BFS, en kısa yolu bulmak için katman katman ilerleyen bir algoritmadır. Bu sayede, en az durak değiştirerek hedefe ulaşmanın yolu belirlenebilir.
+#### Örnek Senaryolar
 
-Kullanım Amacı: Aktarma sayısını minimize ederek en pratik güzergahı belirlemek.
+1. **AŞTİ -> OSB**
+   - En az aktarmalı rota: `AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB`
+   - En hızlı rota (toplam 18 dakika): `AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB`
 
-Dijkstra (En Hızlı Rota)
+2. **Batıkent -> Keçiören**
+   - En az aktarmalı rota: `Batıkent -> Demetevler -> Gar -> Keçiören`
+   - En hızlı rota (toplam 21 dakika): `Batıkent -> Demetevler -> Gar -> Keçiören`
 
-En hızlı rotayı bulmak için Dijkstra Algoritması kullanılmıştır.
+3. **Keçiören -> AŞTİ**
+   - En az aktarmalı rota: `Keçiören -> Gar -> Sıhhiye -> Kızılay -> AŞTİ`
+   - En hızlı rota (toplam 14 dakika): `Keçiören -> Gar -> Sıhhiye -> Kızılay -> AŞTİ`
 
-Mantık: Öncelikli kuyruk (heapq) ile en düşük sürede ulaşılan istasyonlar önceliklendirerek en hızlı rota bulunur.
+## Projeyi Geliştirme Fikirleri
 
-Kullanım Amacı: Kullanıcının toplam süre açısından en verimli yolculuk güzergahını belirlemek.
+- **Gerçek Zamanlı Trafik ve Gecikme Verisi**: Metro hatlarındaki gecikmeler ve yolcu yoğunluğunu dikkate alan bir sistem geliştirilebilir.
+- **Kullanıcı Arayüzü (GUI)**: Kullanıcıların istasyonları seçerek görsel bir harita üzerinden rota planlaması yapabilmesi sağlanabilir.
+- **Mobil Uygulama Entegrasyonu**: Bu sistem, bir mobil uygulamaya entegre edilerek daha kullanışlı hale getirilebilir.
+- **Yapay Zeka Destekli Öneriler**: Kullanıcının geçmiş verilerini analiz ederek en uygun güzergah önerileri sunan bir sistem eklenebilir.
 
-Örnek Kullanım ve Test Sonuçları
-
-Örnek Metro Ağı
-
-Kırmızı Hat: Kızılay, Ulus, Demetevler, OSB
-
-Mavi Hat: AŞTİ, Kızılay, Sıhhiye, Gar
-
-Turuncu Hat: Batıkent, Demetevler, Gar, Keçiören
